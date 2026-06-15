@@ -1,7 +1,7 @@
 const db = require("./../db");
 async function getalltickets(body) {
   try {
-    let get = await db.query(`SELECT * FROM tickets;`);
+    let get = await db.query(`SELECT * FROM tickets order by id desc;`);
     console.log("Getting Tickets Succesfull", get);
     return get[0];
   } catch (error) {
